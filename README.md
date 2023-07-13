@@ -22,11 +22,19 @@ Aplikasi ini dibuat untuk memenuhi tugas akhir mata kuliah basis data
   ```bash
   composer install
   ```
-- Setelah composer jalankan perintah
+- Setelah composer jalankan untuk membuild website perintah
   ```bash
   npm install && npm run build
   ```
-- Jalankan perintah 
+- Jalankan perintah untuk membuat table database
+  ```bash
+  php artisan migrate:fresh
+  ```
+- Jalankan perintah untuk membuat data admin
+  ```bash
+  Php artisan db:seed
+  ```
+- Jalankan perintah untuk menjalankan webserver pada laptop
   ```bash
   php artisan serve --port=8000
   ```
