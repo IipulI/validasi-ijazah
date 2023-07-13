@@ -13,7 +13,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <div class="text-center mt-2 mb-10">
-                        <p class=" text-3xl font-sans mb-2">Validasi Izajah</p>
+                        <p class=" text-3xl font-sans mb-2">Validasi Ijazah</p>
                         <p class="py-1">Masukan salah satu dari npm atau nomor ijazah untuk mengecek data ijazah</p>
                         <p class="py-1">Atau masukan kedua npm dan nomor ijazah untuk memvalidasi dari ijazah mahasiswa</p>
                     </div>

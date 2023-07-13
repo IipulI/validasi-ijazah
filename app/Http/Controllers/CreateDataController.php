@@ -173,25 +173,28 @@ class CreateDataController extends Controller
     }
 
     public function createIjazah(Request $request){
+        // Query model
         $mahasiswa = Mahasiswa::query()->where('npm', $request->input('npm'))->firstOrFail();
         $rektor = Rektor::query()->where('status_jabatan', 1)->firstOrFail();
         $gelar = Gelar::query()->where('id_prodi', $mahasiswa->id_prodi)->firstOrFail();
         $admin = Admin::query()->where('user_id', Auth::id())->firstOrFail();
 
-        if ($mahasiswa->status != 1){
+        // Validate status mahasiswa
+        if ($mahasiswa->is_graduated != 1){
             return response()->json([
                 'status' => '400',
                 'message' => 'Mahasiswa belom memenuhi syarat'
             ])->setStatusCode(400);
         }
 
+        // upload file
         $noIjazah = $request->input('no_ijazah');
         $file = $request->file('file');
-
         $fileName = "ijazah-" . $request->input('npm') . '.png';
-
         $file->move('ijazah', $fileName);
 
+
+        // input data
         try {
             DB::beginTransaction();
 
